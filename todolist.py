@@ -6,20 +6,20 @@ import os
 class  ToDoListApp:
     def __init__(self, root):
         self.root = root
-        self.root.title ("manage your to-do list")
+        self.root.title ("Task Management")
 
         self.tasks = self.load_tasks()
 
         self.task_entry =  tk.Entry(root, width = 50)
         self.task_entry.pack(pady = 10)
 
-        self.add_task_button = tk.Button(root, text = "add a task", command = self.add_task)
+        self.add_task_button = tk.Button(root, text = "Add Task", command = self.add_task)
         self.add_task_button.pack(pady = 5)
 
         self.task_listbox = tk.Listbox(root, width = 50,height = 10)
         self.task_listbox.pack(pady = 10)
 
-        self.delete_task_button = tk.Button(root, text = "delete task", command = self.delete_task)
+        self.delete_task_button = tk.Button(root, text = "Delete Task", command = self.delete_task)
         self.delete_task_button.pack(pady = 5)
 
         self.load_tasks_to_listbox()
@@ -55,11 +55,14 @@ class  ToDoListApp:
               self.task_listbox.insert(tk.END, task["task"])
 
 
-if __name__ == "__main__":
+def main():
     root = tk.Tk()
-    app = ToDoListApp(root)
+    App = ToDoListApp(root)
     root.mainloop()
-                    
+
+if __name__ == "__main__":
+    main()
+
 
 
 
